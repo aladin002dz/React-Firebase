@@ -16,6 +16,8 @@ const config = {
 };
 
 console.log("---");
+console.log("version1");
+console.log("---");
 console.log(process.env.ApiKey);
 console.log(process.env.AuthDomain);
 console.log(process.env.DatabaseURL);
