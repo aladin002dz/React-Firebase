@@ -14,6 +14,7 @@ const config = {
     messagingSenderId: messagingSenderId
 };
 
+console.log("config="+JSON.stringify(config));
 firebase.initializeApp(config);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
