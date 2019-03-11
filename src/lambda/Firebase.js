@@ -2,8 +2,9 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
 
+const apiKey = process.env.apiKey;
 
-const { apiKey, authDomain, databaseURL, projectId, storageBucket, messagingSenderId } = process.env;
+const {  authDomain, databaseURL, projectId, storageBucket, messagingSenderId } = process.env;
 
 const config = {
     apiKey: apiKey,
