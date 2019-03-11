@@ -1,12 +1,15 @@
 {
-  "name": "react-lambda",
-  "version": "0.4.0",
+  "name": "react-lambda-firebase",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
     "node-fetch": "^2.3.0",
     "react": "^16.8.0-alpha.0",
     "react-dom": "^16.8.0-alpha.0",
-    "react-scripts": "^2.1.3"
+    "react-scripts": "^2.1.3",
+    "@reach/router": "^1.2.1",
+    "firebase": "^5.8.0",
+    "react-icons": "^3.3.0"
   },
   "scripts": {
     "start": "run-p start:**",

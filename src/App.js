@@ -1,51 +1,91 @@
+// Import React
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, navigate } from '@reach/router';
+import firebase from './components/Firebase';
 
-class LambdaDemo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { loading: false, msg: null };
+import Home from './components/Home';
+import Welcome from './components/Welcome';
+import Navigation from './components/Navigation';
+import Login from './components/Login';
+import Register from './components/Register';
+import Meetings from './components/Meetings';
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: null,
+      displayName: null,
+      userID: null
+    };
   }
 
-  handleClick = api => e => {
-    e.preventDefault();
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged(FBUser => {
+      if (FBUser) {
+        this.setState({
+          user: FBUser,
+          displayName: FBUser.displayName,
+          userID: FBUser.uid
+        });
+      }
+    });
+  }
 
-    this.setState({ loading: true });
-    fetch('/.netlify/functions/' + api)
-      .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }));
+  registerUser = userName => {
+    firebase.auth().onAuthStateChanged(FBUser => {
+      FBUser.updateProfile({
+        displayName: userName
+      }).then(() => {
+        this.setState({
+          user: FBUser,
+          displayName: FBUser.displayName,
+          userID: FBUser.uid
+        });
+        navigate('/meetings');
+      });
+    });
+  };
+
+  logOutUser = e => {
+    e.preventDefault();
+    this.setState({
+      displayName: null,
+      userID: null,
+      user: null
+    });
+
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        navigate('/login');
+      });
   };
 
   render() {
-    const { loading, msg } = this.state;
-
     return (
-      <p>
-        <button onClick={this.handleClick('hello')}>
-          {loading ? 'Loading...' : 'Call Lambda'}
-        </button>
-        <button onClick={this.handleClick('async-chuck-norris')}>
-          {loading ? 'Loading...' : 'Call Async Lambda'}
-        </button>
-        <br />
-        <span>{msg}</span>
-      </p>
-    );
-  }
-}
+      <div>
+        <Navigation
+          user={this.state.user}
+          logOutUser={this.logOutUser}
+        />
+        {this.state.user && (
+          <Welcome
+            userName={this.state.displayName}
+            logOutUser={this.logOutUser}
+          />
+        )}
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <LambdaDemo />
-        </header>
+        <Router>
+          <Home path="/" user={this.state.user} />
+          <Login path="/login" />
+          <Meetings path="/meetings" />
+          <Register
+            path="/register"
+            registerUser={this.registerUser}
+          />
+        </Router>
       </div>
     );
   }
