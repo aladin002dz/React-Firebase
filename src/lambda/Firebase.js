@@ -2,26 +2,26 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
 
-const apiKey = process.env.apiKey;
+const ApiKey = process.env.apiKey;
 
-const {  authDomain, databaseURL, projectId, storageBucket, messagingSenderId } = process.env;
+const {  AuthDomain, DatabaseURL, ProjectId, StorageBucket, MessagingSenderId } = process.env;
 
 const config = {
-    apiKey: apiKey,
-    authDomain: authDomain,
-    databaseURL: databaseURL,
-    projectId: projectId,
-    storageBucket: storageBucket,
-    messagingSenderId: messagingSenderId
+    apiKey: ApiKey,
+    authDomain: AuthDomain,
+    databaseURL: DatabaseURL,
+    projectId: ProjectId,
+    storageBucket: StorageBucket,
+    messagingSenderId: MessagingSenderId
 };
 
 console.log("---");
-console.log(process.env.apiKey);
-console.log(process.env.authDomain);
-console.log(process.env.databaseURL);
-console.log(process.env.projectId);
-console.log(process.env.storageBucket);
-console.log(process.env.messagingSenderId);
+console.log(process.env.ApiKey);
+console.log(process.env.AuthDomain);
+console.log(process.env.DatabaseURL);
+console.log(process.env.ProjectId);
+console.log(process.env.StorageBucket);
+console.log(process.env.MessagingSenderId);
 console.log("---");
 console.log("config="+JSON.stringify(config));
 console.log("---");
