@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
 
-const ApiKey = process.env.apiKey;
+const ApiKey = process.env.ApiKey;
 
 const {  AuthDomain, DatabaseURL, ProjectId, StorageBucket, MessagingSenderId } = process.env;
 
