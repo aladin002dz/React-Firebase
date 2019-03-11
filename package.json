@@ -1,6 +1,6 @@
 {
   "name": "react-lambda-firebase",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "node-fetch": "^2.3.0",
