@@ -15,6 +15,7 @@ const config = {
 };
 
 console.log("config="+JSON.stringify(config));
+console.log(process.env);
 firebase.initializeApp(config);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
