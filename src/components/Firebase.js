@@ -12,7 +12,7 @@ const config = {
 };
 
 firebase.initializeApp(config);
-let fbconfig=null;
+var fbconfig=null;
 fetch('/.netlify/functions/fbconfig')
       .then(response => response.json())
       .then(json => {
