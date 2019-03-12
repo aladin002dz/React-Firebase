@@ -18,7 +18,7 @@ fetch('/.netlify/functions/fbconfig')
       .then(json => {
             fbconfig = json.fbconfig
           });
-console.log("firebase1");
+console.log("firebase2");
 console.log(fbconfig);
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
