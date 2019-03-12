@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebase from '../lambda/firebasekey';
+import firebase from './Firebase';
 import FormError from './FormError';
 import { navigate } from '@reach/router';
 

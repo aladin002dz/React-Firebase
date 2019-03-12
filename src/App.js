@@ -1,7 +1,7 @@
 // Import React
 import React, { Component } from 'react';
 import { Router, navigate } from '@reach/router';
-import firebase from './lambda/firebasekey';
+import firebase from './components/Firebase';
 
 import Home from './components/Home';
 import Welcome from './components/Welcome';
