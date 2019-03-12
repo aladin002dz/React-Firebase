@@ -2,29 +2,29 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
 
-const ApiKey = process.env.API_KEY;
+const API_KEY = process.env.API_KEY;
 console.log("---");
-console.log("version5");
+console.log("version6");
 console.log("---");
-console.log(ApiKey);
+console.log(API_KEY);
 
-const {  AuthDomain, DatabaseURL, ProjectId, StorageBucket, MessagingSenderId } = process.env;
+const {  AUTH_DOMAIN, DATABASE_URL, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID } = process.env;
 
 const config = {
-    apiKey: ApiKey,
-    authDomain: AuthDomain,
-    databaseURL: DatabaseURL,
-    projectId: ProjectId,
-    storageBucket: StorageBucket,
-    messagingSenderId: MessagingSenderId
+    apiKey: API_KEY,
+    authDomain: AUTH_DOMAIN,
+    databaseURL: DATABASE_URL,
+    projectId: PROJECT_ID,
+    storageBucket: STORAGE_BUCKET,
+    messagingSenderId: MESSAGING_SENDER_ID
 };
 
 console.log("---");
-console.log(process.env.AuthDomain);
-console.log(process.env.DatabaseURL);
-console.log(process.env.ProjectId);
-console.log(process.env.StorageBucket);
-console.log(process.env.MessagingSenderId);
+console.log(process.env.AUTH_DOMAIN);
+console.log(process.env.DATABASE_URL);
+console.log(process.env.PROJECT_ID);
+console.log(process.env.STORAGE_BUCKET);
+console.log(process.env.MESSAGING_SENDER_ID);
 console.log("---");
 console.log("config="+JSON.stringify(config));
 console.log("---");
