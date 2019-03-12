@@ -19,7 +19,7 @@ fetch('/.netlify/functions/fbconfig')
             fbConfig = json.fbconfig
             console.log("fbConfig="+fbConfig);
           });
-console.log("firebase6");
+console.log("firebase7");
 console.log(fbConfig);
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
