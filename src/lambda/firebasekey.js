@@ -4,9 +4,9 @@ import 'firebase/auth';
 
 const ApiKey = process.env.API_KEY;
 console.log("---");
-console.log("version3");
+console.log("version4");
 console.log("---");
-console.log(process.env.ApiKey);
+console.log(process.env.API_KEY);
 
 const {  AuthDomain, DatabaseURL, ProjectId, StorageBucket, MessagingSenderId } = process.env;
 
