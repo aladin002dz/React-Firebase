@@ -3,6 +3,10 @@ import 'firebase/database';
 import 'firebase/auth';
 
 const ApiKey = process.env.ApiKey;
+console.log("---");
+console.log("version2");
+console.log("---");
+console.log(process.env.ApiKey);
 
 const {  AuthDomain, DatabaseURL, ProjectId, StorageBucket, MessagingSenderId } = process.env;
 
@@ -16,9 +20,6 @@ const config = {
 };
 
 console.log("---");
-console.log("version1");
-console.log("---");
-console.log(process.env.ApiKey);
 console.log(process.env.AuthDomain);
 console.log(process.env.DatabaseURL);
 console.log(process.env.ProjectId);
