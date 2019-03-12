@@ -2,9 +2,9 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
 
-const ApiKey = process.env.ApiKey;
+const ApiKey = process.env.API_KEY;
 console.log("---");
-console.log("version2");
+console.log("version3");
 console.log("---");
 console.log(process.env.ApiKey);
 
