@@ -17,7 +17,7 @@ fetch('/.netlify/functions/fbconfig')
       .then(response => response.json())
       .then(json => {
             fbConfig = json.fbconfig
-            console.log(fbConfig);
+            console.log("fbConfig="+fbConfig);
           });
 console.log("firebase6");
 console.log(fbConfig);
