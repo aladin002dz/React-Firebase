@@ -24,14 +24,15 @@ function getFbConfig(){
       });
 };
 
-// Request both students and scores in parallel and return a Promise for both values.
-// `Promise.all` returns a new Promise that resolves when all of its arguments resolve.
+// **************************************************************
 function setConfig(){
   return Promise.all([getFbConfig()])
 }
 
 setConfig();
-
+setTimeout(
+  function () {
+  }, 1000);
 /*
 const json = fetch('/.netlify/functions/fbconfig')
 .then(response => response.json())
@@ -52,7 +53,7 @@ const request = async () => {
   
 request();*/
 
-console.log("firebase14");
+console.log("firebase15");
 console.log("final fbConfig="+fbConfig);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
