@@ -26,9 +26,9 @@ async function getconfig() {
 
 getconfig();
 
-setTimeout(getconfig(),1000);
+setTimeout(()=>{},1000);
 
-console.log("firebase20");
+console.log("firebase21");
 console.log("final fbConfig="+data);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
