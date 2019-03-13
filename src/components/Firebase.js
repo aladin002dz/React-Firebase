@@ -12,15 +12,19 @@ const config = {
 };
 
 firebase.initializeApp(config);
+
 let fbConfig;
-fetch('/.netlify/functions/fbconfig')
-      .then(response => response.json())
-      .then(json => {
-            fbConfig = json.fbconfig
-            console.log("fbConfig="+fbConfig);
-          });
-console.log("firebase7");
-console.log(fbConfig);
+while (typeof yourvar !== 'undefined') {
+  fetch('/.netlify/functions/fbconfig')
+  .then(response => response.json())
+  .then(json => {
+        fbConfig = json.fbconfig
+        console.log("insider fbConfig="+fbConfig);
+      });
+}
+
+console.log("firebase8");
+console.log("final fbConfig="+fbConfig);
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
 
