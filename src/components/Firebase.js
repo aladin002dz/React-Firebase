@@ -27,7 +27,9 @@ console.log("fbConfig="+fbconfig+", data="+data1);
 
 console.log(fbconfig);
 console.log("fbconfig.__proto__");
-console.log(fbconfig.__proto__);
+console.log(fbconfig.toString());
+console.log("--------------------");
+console.log(fbconfig.valueOf());
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
 export default firebase;
