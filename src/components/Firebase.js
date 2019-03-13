@@ -14,7 +14,7 @@ const config = {
 firebase.initializeApp(config);
 
 let fbConfig;
-while (typeof yourvar !== 'undefined') {
+while (typeof yourvar != 'undefined') {
   fetch('/.netlify/functions/fbconfig')
   .then(response => response.json())
   .then(json => {
@@ -23,7 +23,7 @@ while (typeof yourvar !== 'undefined') {
       });
 }
 
-console.log("firebase8");
+console.log("firebase9");
 console.log("final fbConfig="+fbConfig);
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
