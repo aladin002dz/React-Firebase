@@ -33,11 +33,11 @@ function sleep(milliseconds) {
   }
 }
 
+sleep(2000);
 getconfig();
 
-sleep(2000);
 
-console.log("firebase22");
+console.log("firebase23");
 console.log("final fbConfig="+data);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
