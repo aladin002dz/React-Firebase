@@ -13,33 +13,14 @@ const config = {
 
 firebase.initializeApp(config);
 
-let data ;
-async function getconfig() {
-   await fetch('/.netlify/functions/fbconfig')
+const fbconfig = fetch('/.netlify/functions/fbconfig')
   .then(response => response.json())
-  .then(json => {
-        //fbConfig = json.fbconfig;
-        data = json.fbconfig ;
-        console.log("insider fbConfig="+data);
-      });
-    }
+  .then(json => json.fbconfig);
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-}
+console.log("firebase26");
+console.log("fbConfig="+fbconfig);
 
-
-getconfig();
-console.log("waiting...");
-sleep(10000);
-
-console.log("firebase25");
-console.log("final fbConfig="+data);
+console.log(firebase);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
