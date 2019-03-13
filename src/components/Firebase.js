@@ -19,10 +19,10 @@ const fbconfig = fetch('/.netlify/functions/fbconfig')
   .then(json => 
     {
       data1 = json;
-      return json.fbconfig;
+      return Promise.resolve(json.fbconfig);
     });
 
-console.log("firebase28");
+console.log("firebase29");
 console.log("fbConfig="+fbconfig+", data="+data1);
 
 console.log(fbconfig);
