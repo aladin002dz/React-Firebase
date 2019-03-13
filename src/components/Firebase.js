@@ -36,9 +36,9 @@ function sleep(milliseconds) {
 
 getconfig();
 console.log("waiting...");
-sleep(5000);
+sleep(10000);
 
-console.log("firebase24");
+console.log("firebase25");
 console.log("final fbConfig="+data);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
