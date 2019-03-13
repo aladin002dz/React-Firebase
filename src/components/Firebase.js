@@ -13,17 +13,19 @@ const config = {
 
 firebase.initializeApp(config);
 
+var data1;
 const fbconfig = fetch('/.netlify/functions/fbconfig')
   .then(response => response.json())
   .then(json => 
     {
+      data1 = json;
       return json.fbconfig;
     });
 
-console.log("firebase27");
-console.log("fbConfig="+fbconfig);
+console.log("firebase28");
+console.log("fbConfig="+fbconfig+", data="+data1);
 
-console.log(firebase);
+console.log(fbconfig);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
