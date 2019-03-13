@@ -9,9 +9,9 @@ export function handler(event, context, callback) {
     storageBucket: STORAGE_BUCKET,
     messagingSenderId: MESSAGING_SENDER_ID
   };
-    console.log('queryStringParameters', event.queryStringParameters);
-    callback(null, {
-      statusCode: 200,
-      body: JSON.stringify({ fbconfig: JSON.stringify(config)})
-    });
+
+  callback(null, {
+    statusCode: 200,
+    body: JSON.stringify({ fbconfig: JSON.stringify(config)})
+  });
   }

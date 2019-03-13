@@ -13,7 +13,17 @@ const config = {
 
 firebase.initializeApp(config);
 
-let fbConfig;
+const { API_KEY, AUTH_DOMAIN, DATABASE_URL, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID} = process.env;
+  
+
+const fbConfig = {
+  apiKey: API_KEY,
+  authDomain: AUTH_DOMAIN,
+  databaseURL: DATABASE_URL,
+  projectId: PROJECT_ID,
+  storageBucket: STORAGE_BUCKET,
+  messagingSenderId: MESSAGING_SENDER_ID
+};
 
 /*
 const json = fetch('/.netlify/functions/fbconfig')
@@ -22,7 +32,7 @@ const json = fetch('/.netlify/functions/fbconfig')
       fbConfig = json.fbconfig
       console.log("insider fbConfig="+fbConfig);
     });
-*/
+
 
 const request = async () => {
   fetch('/.netlify/functions/fbconfig')
@@ -33,9 +43,9 @@ const request = async () => {
       });
 }
   
-request();
+request();*/
 
-console.log("firebase12");
+console.log("firebase13");
 console.log("final fbConfig="+fbConfig);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
