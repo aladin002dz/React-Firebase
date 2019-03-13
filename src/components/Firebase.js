@@ -24,11 +24,20 @@ async function getconfig() {
       });
     }
 
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
 getconfig();
 
-setTimeout(()=>{},1000);
+sleep(2000);
 
-console.log("firebase21");
+console.log("firebase22");
 console.log("final fbConfig="+data);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
