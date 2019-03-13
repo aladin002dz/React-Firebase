@@ -19,10 +19,9 @@ fetch('/.netlify/functions/fbconfig')
   .then(json => {
         fbConfig = json.fbconfig
       })
-  .then(console.log("insider fbConfig="+fbConfig))
-  .done();
+  .then(console.log("insider fbConfig="+fbConfig));
 
-console.log("firebase16");
+console.log("firebase17");
 console.log("final fbConfig="+fbConfig);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
