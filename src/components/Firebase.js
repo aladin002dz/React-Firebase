@@ -13,17 +13,24 @@ const config = {
 
 firebase.initializeApp(config);
 
-const { API_KEY, AUTH_DOMAIN, DATABASE_URL, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID} = process.env;
-  
+var fbConfig;
 
-const fbConfig = {
-  apiKey: API_KEY,
-  authDomain: AUTH_DOMAIN,
-  databaseURL: DATABASE_URL,
-  projectId: PROJECT_ID,
-  storageBucket: STORAGE_BUCKET,
-  messagingSenderId: MESSAGING_SENDER_ID
+function getFbConfig(){
+  return fetch('/.netlify/functions/fbconfig')
+  .then(response => response.json())
+  .then(json => {
+        fbConfig = json.fbconfig
+        console.log("insider fbConfig="+fbConfig);
+      });
 };
+
+// Request both students and scores in parallel and return a Promise for both values.
+// `Promise.all` returns a new Promise that resolves when all of its arguments resolve.
+function setConfig(){
+  return Promise.all([getFbConfig()])
+}
+
+setConfig();
 
 /*
 const json = fetch('/.netlify/functions/fbconfig')
@@ -45,7 +52,7 @@ const request = async () => {
   
 request();*/
 
-console.log("firebase13");
+console.log("firebase14");
 console.log("final fbConfig="+fbConfig);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
