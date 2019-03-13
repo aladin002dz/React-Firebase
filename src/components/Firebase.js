@@ -22,7 +22,7 @@ const fbconfig = fetch('/.netlify/functions/fbconfig')
       return Promise.resolve(json.fbconfig);
     });
 
-console.log("firebase31");
+console.log("firebase32");
 console.log("fbConfig="+fbconfig+", data="+data1);
 
 console.log(fbconfig);
@@ -30,6 +30,8 @@ console.log("fbconfig.__proto__");
 console.log(fbconfig.toString());
 console.log("--------------------");
 console.log(fbconfig.valueOf());
+console.log("--------------------");
+console.log(fbconfig.PromiseValue);
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
 export default firebase;
