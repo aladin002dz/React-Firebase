@@ -14,7 +14,17 @@ const config = {
 firebase.initializeApp(config);
 
 let fbConfig;
-while (typeof fbConfig === 'undefined') {
+
+/*
+const json = fetch('/.netlify/functions/fbconfig')
+.then(response => response.json())
+.then(json => {
+      fbConfig = json.fbconfig
+      console.log("insider fbConfig="+fbConfig);
+    });
+*/
+
+const request = async () => {
   fetch('/.netlify/functions/fbconfig')
   .then(response => response.json())
   .then(json => {
@@ -22,10 +32,12 @@ while (typeof fbConfig === 'undefined') {
         console.log("insider fbConfig="+fbConfig);
       });
 }
+  
+request();
 
-console.log("firebase11");
+console.log("firebase12");
 console.log("final fbConfig="+fbConfig);
+
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
-
 export default firebase;
