@@ -33,11 +33,12 @@ function sleep(milliseconds) {
   }
 }
 
-sleep(2000);
+
 getconfig();
+console.log("waiting...");
+sleep(5000);
 
-
-console.log("firebase23");
+console.log("firebase24");
 console.log("final fbConfig="+data);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
