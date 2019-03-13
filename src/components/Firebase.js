@@ -22,7 +22,7 @@ fetch('/.netlify/functions/fbconfig')
         console.log("insider fbConfig="+data);
       });
 
-console.log("firebase17");
+console.log("firebase18");
 console.log("final fbConfig="+data);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
