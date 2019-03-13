@@ -22,7 +22,7 @@ const fbconfig = fetch('/.netlify/functions/fbconfig')
       return Promise.resolve(json.fbconfig);
     });
 
-console.log("firebase30");
+console.log("firebase31");
 console.log("fbConfig="+fbconfig+", data="+data1);
 
 console.log(fbconfig);
