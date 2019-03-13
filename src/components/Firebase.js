@@ -14,46 +14,15 @@ const config = {
 firebase.initializeApp(config);
 
 var fbConfig;
-
-function getFbConfig(){
-  return fetch('/.netlify/functions/fbconfig')
+fetch('/.netlify/functions/fbconfig')
   .then(response => response.json())
   .then(json => {
         fbConfig = json.fbconfig
-        console.log("insider fbConfig="+fbConfig);
-      });
-};
+      })
+  .then(console.log("insider fbConfig="+fbConfig))
+  .done();
 
-// **************************************************************
-function setConfig(){
-  return Promise.all([getFbConfig()])
-}
-
-setConfig();
-setTimeout(
-  function () {
-  }, 1000);
-/*
-const json = fetch('/.netlify/functions/fbconfig')
-.then(response => response.json())
-.then(json => {
-      fbConfig = json.fbconfig
-      console.log("insider fbConfig="+fbConfig);
-    });
-
-
-const request = async () => {
-  fetch('/.netlify/functions/fbconfig')
-  .then(response => response.json())
-  .then(json => {
-        fbConfig = json.fbconfig
-        console.log("insider fbConfig="+fbConfig);
-      });
-}
-  
-request();*/
-
-console.log("firebase15");
+console.log("firebase16");
 console.log("final fbConfig="+fbConfig);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
