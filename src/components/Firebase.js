@@ -15,9 +15,12 @@ firebase.initializeApp(config);
 
 const fbconfig = fetch('/.netlify/functions/fbconfig')
   .then(response => response.json())
-  .then(json => json.fbconfig);
+  .then(json => 
+    {
+      return json.fbconfig;
+    });
 
-console.log("firebase26");
+console.log("firebase27");
 console.log("fbConfig="+fbconfig);
 
 console.log(firebase);
