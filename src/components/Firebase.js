@@ -22,8 +22,20 @@ async function getconfig(){
 
 const fbConfig = getconfig();
 
-console.log("firebase34");
+console.log("firebase35");
 console.log(fbConfig);
+
+const { API_KEY, AUTH_DOMAIN, DATABASE_URL, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID} = process.env;
+  const config2 = {
+    apiKey: API_KEY,
+    authDomain: AUTH_DOMAIN,
+    databaseURL: DATABASE_URL,
+    projectId: PROJECT_ID,
+    storageBucket: STORAGE_BUCKET,
+    messagingSenderId: MESSAGING_SENDER_ID
+  };
+  console.log("-----------------------------");
+  console.log(config2);
 
 /*
 var data1;
@@ -46,6 +58,7 @@ console.log(fbconfig.valueOf());
 console.log("--------------------");
 console.log(fbconfig.PromiseValue);
 */
+
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
 export default firebase;
