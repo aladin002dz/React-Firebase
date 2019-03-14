@@ -14,7 +14,7 @@ const config = {
 firebase.initializeApp(config);
 
 async function getconfig(){
-  const response = await fetch('/.netlify/functions/return-env')
+  const response = await fetch('/.netlify/functions/fbconfig')
   const resObj = await response.json()
   const fbconfig = await resObj.fbconfig;
   return fbconfig;
@@ -22,7 +22,7 @@ async function getconfig(){
 
 const fbConfig = getconfig();
 
-console.log("firebase35");
+console.log("firebase36");
 console.log(fbConfig);
 
 const { API_KEY, AUTH_DOMAIN, DATABASE_URL, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID} = process.env;
