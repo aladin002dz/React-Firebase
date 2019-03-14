@@ -13,11 +13,18 @@ const config = {
 
 firebase.initializeApp(config);
 
-const response = await fetch('/.netlify/functions/return-env')
-const resObj = await response.json()
-const fbconfig = await resObj.fbconfig;
-console.log("firebase33");
-console.log(fbconfig);
+async function getconfig(){
+  const response = await fetch('/.netlify/functions/return-env')
+  const resObj = await response.json()
+  const fbconfig = await resObj.fbconfig;
+  return fbconfig;
+}
+
+const fbConfig = getconfig();
+
+console.log("firebase34");
+console.log(fbConfig);
+
 /*
 var data1;
 const fbconfig = fetch('/.netlify/functions/fbconfig')
