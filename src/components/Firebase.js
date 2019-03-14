@@ -13,6 +13,12 @@ const config = {
 
 firebase.initializeApp(config);
 
+const response = await fetch('/.netlify/functions/return-env')
+const resObj = await response.json()
+const fbconfig = await resObj.fbconfig;
+console.log("firebase33");
+console.log(fbconfig);
+/*
 var data1;
 const fbconfig = fetch('/.netlify/functions/fbconfig')
   .then(response => response.json())
@@ -32,6 +38,7 @@ console.log("--------------------");
 console.log(fbconfig.valueOf());
 console.log("--------------------");
 console.log(fbconfig.PromiseValue);
+*/
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
 export default firebase;
