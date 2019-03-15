@@ -24,8 +24,8 @@ const config = {
 };
 firebase.initializeApp(config);
 
-console.log("firebase39");
-console.log("config"+config);
+console.log("firebase40");
+console.log("config"+ JSON.stringify(config));
 
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const auth = firebase.auth();
